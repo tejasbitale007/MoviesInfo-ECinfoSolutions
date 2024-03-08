@@ -3,7 +3,7 @@ import React from 'react'
 
 interface textProps {
     text: string,
-    style: TextStyle,
+    style?: TextStyle,
     containerStyle?: ViewStyle,
     numberOfLines?:number
 }

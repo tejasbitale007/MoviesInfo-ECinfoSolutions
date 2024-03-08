@@ -1,4 +1,4 @@
 const screenConstant ={
-    HomeScreen:'Home Screen'
+    HomeScreen:'Home'
 };
 export default screenConstant;

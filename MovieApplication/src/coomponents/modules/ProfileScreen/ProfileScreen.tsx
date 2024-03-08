@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import MyProfileHeading from './molecules/myProfileHeading'
+import MyProfileHeading from './molecules/MyProfileHeading'
 
 const ProfileScreen = () => {
   return (

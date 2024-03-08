@@ -7,6 +7,8 @@ import ProfileScreen from '../modules/ProfileScreen/ProfileScreen';
 import MovieDetailsScreen from '../modules/MovieDetailsScreen/MovieDetailsScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabs from './BottomTabs';
+import LoginScreen from '../modules/LoginScreen/LoginScreen';
+import RegisterScreen from '../modules/RegisterScreen/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,10 +18,11 @@ const AppStack = () => {
             headerShown:false,
             headerBackTitleVisible:false
         }}>
-            {/* <Stack.Screen name={'Login Screen'} component={HomeScreen}/> */}
+            <Stack.Screen name={'Login Screen'} component={LoginScreen}/>
             <Stack.Screen name={'BottomTabs Screen'} component={BottomTabs}></Stack.Screen>
-            <Stack.Screen name={'Register Screen'} component={ProfileScreen}></Stack.Screen>
+            <Stack.Screen name={'Register Screen'} component={RegisterScreen}></Stack.Screen>
             <Stack.Screen name={'Profile Screen'} component={ProfileScreen}></Stack.Screen>
+            <Stack.Screen name={'Home'} component={HomeScreen}></Stack.Screen>
         </Stack.Navigator>
     )
 }

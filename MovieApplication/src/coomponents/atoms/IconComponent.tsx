@@ -4,8 +4,8 @@ import { SvgXml } from 'react-native-svg'
 
 interface iconProps {
     iconName: string,
-    containerStyle: ViewStyle,
-    size: number,
+    containerStyle?: ViewStyle,
+    size?: number,
     viewBox?: string,
     color?:string
 }
