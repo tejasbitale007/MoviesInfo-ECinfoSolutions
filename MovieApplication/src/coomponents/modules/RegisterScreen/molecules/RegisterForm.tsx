@@ -6,9 +6,12 @@ import InputTextComponent from '../../LoginScreen/atoms/InputTextComponent';
 import LongButtonIcon from '../../LoginScreen/atoms/LognButtonIcon';
 import { validConfirmPlaceholderforPassword, validPlaceholder, validPlaceholderforPassword } from '../../LoginScreen/utils';
 import TextComponent from '../../../atoms/TextComponent';
+import { useDispatch } from 'react-redux';
+import { storeUser } from '../redux/asyncAction';
 
 const RegisterForm = () => {
     const navigation = useNavigation();
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [cpwd, setCpwd] = useState('');
@@ -26,8 +29,12 @@ const RegisterForm = () => {
             confirmPassword: cpwd,
             mobile: mobile
         }
-        if (userFields.userName.length > 0 && userFields.Password.length > 0) {
-
+        if (userFields.userName.length > 0 && userFields.Password.length > 0 && mobile.length > 0) {
+            dispatch(storeUser(userFields));
+            setPwd('');
+            setMobile('');
+            setPwd('');
+            setEmail('');
             setSelect({
                 emailField: false,
                 passwordField: false,
@@ -96,7 +103,7 @@ const RegisterForm = () => {
             {select.confrimPassword && <TextComponent text={validConfirmPlaceholderforPassword(pwd)} style={{ color: color.redColor }} />}
 
             <InputTextComponent text='Please Enter Mobile Number'
-                value={pwd}
+                value={email}
                 onFocus={() => {
                     setSelect({
                         emailField: true,
