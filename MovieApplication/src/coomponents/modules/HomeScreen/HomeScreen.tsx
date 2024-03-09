@@ -18,18 +18,18 @@ const HomeScreen = () => {
     }, []);
     const loading = useSelector((state: StoreType) => state?.homeScreen?.loading);
     return (
-        <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: 'white' }}>
-            {loading && <Loader />}
-            {
-                !loading &&
+        <>
+        {loading && <Loader />}
+        {!loading && <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: 'white' }}>
                 <View style={{ marginVertical: 16, marginHorizontal: 16 }}>
                     <UserHeading />
                     <HomeSearch/>
                     <TrendingMovies />
                     <WatchlistMovies />
                 </View>
-            }
-        </ScrollView>
+            
+        </ScrollView>}
+        </>
     )
 }
 

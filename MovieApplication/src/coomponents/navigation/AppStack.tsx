@@ -23,6 +23,7 @@ const AppStack = () => {
             <Stack.Screen name={'Register Screen'} component={RegisterScreen}></Stack.Screen>
             <Stack.Screen name={'Profile Screen'} component={ProfileScreen}></Stack.Screen>
             <Stack.Screen name={'Home'} component={HomeScreen}></Stack.Screen>
+            <Stack.Screen name={'Movie'} component={MovieDetailsScreen}></Stack.Screen>
         </Stack.Navigator>
     )
 }

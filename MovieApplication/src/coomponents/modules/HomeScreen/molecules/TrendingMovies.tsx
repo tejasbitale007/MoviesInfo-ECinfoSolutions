@@ -5,15 +5,20 @@ import { TrendingMoviesStyle } from './TrendingMoviesStyle'
 import MovieCard from './MovieCard'
 import { useSelector } from 'react-redux'
 import { StoreType } from '../../../redux/Store'
+import { useNavigation } from '@react-navigation/native'
 
 const TrendingMovies = () => {
   const movieData = useSelector((state: StoreType) => state?.homeScreen?.trendings?.results);
-  console.log(movieData?.length)
+  const navigation = useNavigation();
+  const onHandleClick = (item:number) =>{
+    const listingId = item;
+    navigation.navigate('Movie',{listingId})
+  }
   return (
     <View style={{ marginTop: 16 }}>
       <TextComponent text={'Trending Movies'} style={TrendingMoviesStyle.textStyle} containerStyle={{}} />
       <View style={{marginTop:16}}>
-        <MovieCard />
+        <MovieCard onPress={onHandleClick} />
       </View>
     </View>
   )
