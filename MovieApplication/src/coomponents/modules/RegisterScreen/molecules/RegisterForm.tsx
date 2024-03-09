@@ -103,7 +103,7 @@ const RegisterForm = () => {
             {select.confrimPassword && <TextComponent text={validConfirmPlaceholderforPassword(pwd)} style={{ color: color.redColor }} />}
 
             <InputTextComponent text='Please Enter Mobile Number'
-                value={email}
+                value={mobile}
                 onFocus={() => {
                     setSelect({
                         emailField: true,
